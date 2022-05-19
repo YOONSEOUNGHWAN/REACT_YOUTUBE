@@ -7,10 +7,11 @@ class Youtube {
     };
   }
   //   then->then -> Promise return 해준다..
+// promise return하므로 async화
 
-  mostPopular() {
+  async mostPopular() {
     return (
-      fetch(
+      await fetch(
         `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
         this.GetRequestOptions
       )
@@ -21,9 +22,9 @@ class Youtube {
     );
   }
 
-  search(query) {
+  async search(query) {
     return (
-      fetch(
+      await fetch(
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${this.key}`,
         this.getRequestOptions
       )

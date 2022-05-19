@@ -3,7 +3,9 @@
     /* 숨막히는 여백 */
     padding: 0.2em;
 }
-
+.container.list{
+    width: 100%;
+}
 .video{
     /* 한줄에 다 나와야 하므로 */
     display: flex;
@@ -19,6 +21,7 @@
     height: 100%;
     /* 그래서 border-box */
     box-sizing: border-box;
+    /* 구글에 box shadow generator */
     box-shadow: 3px 3px 5px 0px rgba(191,191,191,0.53);
 }
 
