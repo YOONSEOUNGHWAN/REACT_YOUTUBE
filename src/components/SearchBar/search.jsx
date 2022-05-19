@@ -4,6 +4,13 @@ import React from 'react'
 
 export default function SearchBar() {
   return (
-<h1>Header</h1>
+    <head>
+      <img src="/images/logo.png" alt="logo" />
+      <h1>Youtube</h1>
+      <input type="search" placeholder='Search..'/>
+      <button type='submit'>
+        <img src="/images/search.png" alt="search" />
+      </button>
+    </head>
   )
 }
