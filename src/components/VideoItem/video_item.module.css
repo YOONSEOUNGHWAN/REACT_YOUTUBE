@@ -1,13 +1,18 @@
 .container{
     width: 50%;
+    /* 숨막히는 여백 */
     padding: 0.2em;
 }
 
 .video{
+    /* 한줄에 다 나와야 하므로 */
     display: flex;
+    
     align-items: center;
     border: 1px solid lightgray;
+
     cursor: pointer;
+    /* 애니메이션 */
     transition: transform 250ms ease-in;
     /* border때문에 50%이상이 된다. */
     width: 100%;
@@ -28,6 +33,8 @@
 .metadata{
     margin-left: 0.2em;
 }
+
+/* p태그는 기본적ㅇ로 margin이 들어간다 */
 .title,
 .channel{
     margin: 0;

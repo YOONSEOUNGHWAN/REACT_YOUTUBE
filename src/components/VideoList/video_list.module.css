@@ -1,5 +1,7 @@
 .videos{
+    /* 한줄에 모든 리스트가 나오게 됨 */
     display: flex;
+    /* 각 리스트가 크기에 맞게 정렬되도록 랩핑해줌 */
     flex-wrap: wrap;
     list-style: none;
     padding-left: 0;
