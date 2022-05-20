@@ -16,6 +16,7 @@ code {
   box-sizing: border-box;
 }
 
+/* center로 이동하기 */
 #root{
   display: flex;
   justify-content: center;

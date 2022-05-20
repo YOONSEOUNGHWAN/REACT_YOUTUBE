@@ -3,9 +3,9 @@ import React, { useRef } from "react";
 import styles from "./searchbar.module.css";
 
 // 대문자 작성 안 하면 hook 못 쓴다~ 명심하자
-export default function Searchbar({ onSearch }) {
+export default React.memo(function Searchbar({ onSearch, onLogo }) {
   const inputRef = useRef();
-
+  // console.log('hi')
   const handleInput = () => {
     const value = inputRef.current.value;
     onSearch(value);
@@ -21,7 +21,7 @@ export default function Searchbar({ onSearch }) {
   };
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={onLogo}>
         <img className={styles.img} src="/images/logo.png" alt="logo" />
         <h1 className={styles.title}>Youtube</h1>
       </div>
@@ -41,4 +41,4 @@ export default function Searchbar({ onSearch }) {
       </button>
     </header>
   );
-}
+});

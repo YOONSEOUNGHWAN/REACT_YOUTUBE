@@ -6,7 +6,7 @@ export default function VideoDetail({ video }) {
     <>
       <section className={styles.detail}>
         <iframe
-          title={video.id}
+          title="youtube player"
           className={styles.video}
           type="text/html"
           width="100%"

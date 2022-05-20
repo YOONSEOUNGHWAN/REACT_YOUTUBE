@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCallback } from "react";
 import styles from "./app.module.css";
 import SearchBar from "./components/SearchBar/searchbar";
 import VideoDetail from "./components/VideoDetail/video_detail";
@@ -15,25 +16,34 @@ function App({ youtube }) {
       .mostPopular()
       .then((videos) => setVideos(videos));
     //마운트가 되었을때만
-  }, []);
+  }, [youtube]);
 
-  const onSearch = (query) => {
-    youtube //
-      .search(query)
-      .then((videos) => {
-        setVideos(videos);
-        setSelected(null);
-      });
-  };
+  // 멤버 함수는 APP컴포넌트에 따라 계속 재생성됨 -> 새로운 prop을 전달하게됨
+
+  const onSearch = useCallback(
+    (query) => {
+      youtube //
+        .search(query)
+        .then((videos) => {
+          setVideos(videos);
+          setSelected(null);
+        });
+    },
+    [youtube]
+  );
 
   const selectedVideo = (video) => {
     setSelected(video);
   };
 
+  const onLogo = useCallback(() => {
+    setSelected(null);
+  }, []);
+
   return (
     <>
       <div className={styles.app}>
-        <SearchBar onSearch={onSearch} />
+        <SearchBar onSearch={onSearch} onLogo={onLogo} />
         <section className={styles.content}>
           {selected && (
             <div className={styles.detail}>
