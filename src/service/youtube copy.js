@@ -1,5 +1,3 @@
-import axios from "axios";
-
 class Client {
   constructor(httpClient) {
     this.client = httpClient;
